@@ -1,7 +1,7 @@
 # Goost Mono Examples
 
 This is a collection of C# examples which rely on the functionality implemented
-in the [Goost](https://github.com/goostengine/goost) Godot Engine C++ extension.
+in the [Goost](https://goostengine.github.io/) Godot Engine C++ extension.
 
 ## License
 
