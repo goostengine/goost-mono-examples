@@ -18,10 +18,10 @@ public class RandomColliders : Node2D
 		ConvexPolygonShape2D shape = new ConvexPolygonShape2D();
 		shape.Points = GetRandomPolygon();
 		Physics2DServer.BodyAddShape(body.GetRid(), shape.GetRid());
-		VisualShape2D vshape = new VisualShape2D();
-		vshape.Shape = shape;
-		vshape.Modulate = Godot.Random.Color;
-		body.AddChild(vshape);
+		VisualShape2D visual = new VisualShape2D();
+		visual.Shape = shape;
+		visual.Modulate = Godot.Random.Color;
+		body.AddChild(visual);
 		AddChild(body);
 		body.Position = offset;
 	}
@@ -31,7 +31,7 @@ public class RandomColliders : Node2D
 		int sides = (int)Godot.Random.Range(3, 10);
 		Vector2[] polygon = GoostGeometry2D.RegularPolygon(sides, 64.0f);
 		for (int i = 0; i < polygon.Length; ++i) {
-			polygon[i] += Random2D.PointInCircle(5.0f, 10.0f);
+			polygon[i] += Random2D.PointInCircle(5.0f, 20.0f);
 		}
 		return polygon;
 	}
